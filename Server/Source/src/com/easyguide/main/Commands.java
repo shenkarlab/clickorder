@@ -10,6 +10,7 @@ public class Commands
 	
 	// Unique keys
 	final static String KEY_COMMAND 					= "key_command";	   	 		// Command to parse
+	final static String KEY_RECORDING_ID 				= "key_recording_id";	   	 	// Command to parse
 	final static String KEY_DATA 						= "key_data";	   	 			// JSON data key
 	final static String KEY_NAME 						= "key_name";	   	 			// Command to parse
 }
