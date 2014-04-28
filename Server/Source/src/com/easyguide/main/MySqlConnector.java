@@ -77,4 +77,39 @@ public class MySqlConnector
 		datasource = new DataSource();
 		datasource.setPoolProperties( p );
 	}
+	
+	
+	// Creates a new recording and returns the created item ID
+	public int CreateRecording( String query, String name )
+	{
+		PreparedStatement ps;
+		
+		try 
+		{
+			conn = datasource.getConnection();
+			ps = conn.prepareStatement( query );
+			
+			ps.setString( 1, name );
+			ps.executeUpdate();
+			ResultSet generatedKeys = ps.getGeneratedKeys();
+			if ( generatedKeys != null && generatedKeys.next() )
+			{
+				int newUserId = 0;
+				newUserId = generatedKeys.getInt( 1 );
+				
+				return newUserId;
+			}
+			else
+			{
+				return -1;
+			}
+		} 
+		catch ( SQLException e )
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			return -1;
+		}
+	}
 }

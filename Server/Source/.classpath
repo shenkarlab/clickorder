@@ -13,5 +13,12 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/easy_guide/Server/Source/lib/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/easy_guide/Server/Source/lib/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/easy_guide/Server/Source/lib/gson-2.2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/easy_guide/Server/Source/lib/gson-2.2.4-sources.jar"/>
+	<classpathentry kind="lib" path="C:/easy_guide/Server/Source/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/easy_guide/Server/Source/lib/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="C:/easy_guide/Server/Source/lib/jackson-core-2.2.3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
