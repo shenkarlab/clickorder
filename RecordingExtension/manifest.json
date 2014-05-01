@@ -1,0 +1,28 @@
+{
+  "name": "Action Recorder",
+  "description": "",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["scripts//background.js"]
+  },
+  "content_scripts": [{
+    "js": ["scripts//eventsListener.js"],
+     "matches": ["*://*/*"]
+  }],
+
+  "permissions": ["tabs", "http://*/*", "https://*/*", "pageCapture", "activeTab", "storage", "input"],
+
+  "browser_action": {
+      "default_title": "Sidetool",
+      "default_icon": "img//icon.png",
+      "default_popup": "Sidetool.html"
+  },
+
+  "commands": {
+    "screenshot" : {
+    "suggested_key" :  { "default" : "Alt+S" },
+    "description" : " Take a screenshot"
+   }
+  }
+}
