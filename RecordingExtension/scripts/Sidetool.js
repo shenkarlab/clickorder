@@ -4,9 +4,13 @@ var ExtensionDataName = "persistentData";
 
 // Holds the application commands
 var ExtensionData = {
-  dataVersion: 3, //if you want to set a new default data, you must update "dataVersion".
+  dataVersion: 3,
+  isRecording: false,
   commands: []
 };
+
+var playImage = "img/play.png";
+var stopImage = "img/stop.png";
 
   ////////////
  // EVENTS //
@@ -25,31 +29,49 @@ $("document").ready(function()
         clearCommands();
     });
 
-    // Load data on page load
+    $( "#recordingBtn" ).click(function() {
+        recordingButtonPressed();
+    });
+
+    // Init list after sotrage load callback
     DB_load(function() 
     {
-        var list = document.getElementById('photosList');
+        changeRecordingButtonImage();
 
-        // Append loaded commands to list
-        for (var i = 0; i < ExtensionData.commands.length; i++) 
+        if (ExtensionData.isRecording)
         {
-            var entry = document.createElement('li');
-            var br = document.createElement('br');
+            var list = document.getElementById('photosList');
 
-            entry.appendChild(getImageElement(ExtensionData.commands[i].id));
-            entry.appendChild(br);
-            entry.appendChild(boldHTML("Type: "));
-            entry.appendChild(document.createTextNode(ExtensionData.commands[i].id + " "));
-            br = document.createElement('br');
-            entry.appendChild(br);
-            entry.appendChild(boldHTML("Data: "));
-            entry.appendChild(document.createTextNode(ExtensionData.commands[i].name));              
+            // Append loaded commands to list
+            for (var i = 0; i < ExtensionData.commands.length; i++) 
+            {
+                var entry = document.createElement('li');
+                var br = document.createElement('br');
 
-            list.appendChild(entry);
-        } 
+                entry.appendChild(getImageElement(ExtensionData.commands[i].id));
+                entry.appendChild(br);
+                entry.appendChild(boldHTML("Type: "));
+                entry.appendChild(document.createTextNode(ExtensionData.commands[i].id + " "));
+                br = document.createElement('br');
+                entry.appendChild(br);
+                entry.appendChild(boldHTML("Data: "));
+                entry.appendChild(document.createTextNode(ExtensionData.commands[i].name));              
 
-        // Add seperating line after every list item
-        jQuery("ul li").append("<hr size='3' style='color:#333;background-color:#333;' />");
+                list.appendChild(entry);
+            } 
+
+            // Add seperating line after every list item
+            jQuery("ul li").append("<hr size='3' style='color:#333;background-color:#333;' />");
+        }
+        else
+        {
+            // commands saved while not recording
+            // have no importance
+            if (ExtensionData.commands.length > 0)
+            {
+                clearCommands();
+            }
+        }
   });
 });
 
@@ -101,4 +123,44 @@ function clearCommands()
     ExtensionData.commands = [];
     // Refresh page
     history.go(0);
+}
+
+function recordingButtonPressed()
+{
+    ExtensionData.isRecording = !ExtensionData.isRecording;
+    changeRecordingButtonImage();
+
+    DB_save(function() {
+        if (!ExtensionData.isRecording)
+        {
+            exportCommands();
+            clearCommands();
+        }
+    });
+}
+
+function changeRecordingButtonImage()
+{
+    if (ExtensionData.isRecording)
+    {
+        $("#recordingBtn").attr("src", stopImage);
+    }
+    else
+    {
+        $("#recordingBtn").attr("src", playImage);   
+    }
+}
+
+function exportCommands()
+{
+    var message = "Actions Summary:\n------------------\n\n";
+
+    for (var i = 0; i < ExtensionData.commands.length; i++) 
+    {
+        message += ("#" + (i + 1) + " ");
+        message += ("Type: " + ExtensionData.commands[i].id + "\n");
+        message += ("Data: " + ExtensionData.commands[i].name + "\n\n");
+    }
+
+    alert(message);
 }

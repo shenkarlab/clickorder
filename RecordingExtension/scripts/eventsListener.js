@@ -3,11 +3,13 @@
 // Loads storage handling functions
 
 // Events currently saved: 
+// ----------------------
 // * mouse clicks 
 // * keyboard types
 // * scrolling
 // * Alt + S takes a photo
-
+// * new tab opens
+// ----------------------
 
   /////////////
  // STORAGE //
@@ -18,8 +20,10 @@ var eventProperty = [];
 
 var ExtensionDataName = "persistentData";
 
+// Holds the application commands
 var ExtensionData = {
-  dataVersion: 3, //if you want to set a new default data, you must update "dataVersion".
+  dataVersion: 3,
+  isRecording: false,
   commands: []
 };
 
@@ -67,8 +71,13 @@ function DB_save(callback) {
 
 function saveData(id, value)
 {
-  ExtensionData.commands.push({id: id, name: value});
-  DB_save();
+    DB_load(function() {
+        if (ExtensionData.isRecording)
+        {
+            ExtensionData.commands.push({id: id, name: value});
+            DB_save();
+        }  
+    });
 }
 
   ////////////
