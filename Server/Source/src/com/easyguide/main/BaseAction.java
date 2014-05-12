@@ -1,14 +1,16 @@
 package com.easyguide.main;
 
+import java.sql.Date;
+
 // Base action class
 public abstract class BaseAction
 {
 	protected int		m_recordingID;		// Unique recording ID 
-	protected int		m_index;			// Action index
+	protected Date		m_index;			// Action index
 	
 	
 	// Base ctor
-	public BaseAction( int recordingID, int index )
+	public BaseAction( int recordingID, Date index )
 	{
 		m_recordingID = recordingID;
 		m_index = index;
@@ -21,7 +23,7 @@ public abstract class BaseAction
 	}
 
 
-	public int getiIndex()
+	public Date getiIndex()
 	{
 		return m_index;
 	}

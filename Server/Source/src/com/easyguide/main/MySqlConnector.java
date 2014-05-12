@@ -26,7 +26,7 @@ public class MySqlConnector
 
 	// Hostname
 	//private static String dbHost = "67.231.242.50";
-	private static String dbHost = "localhost";
+	private static String dbHost = "67.231.242.50";
 
 	// Port -- Standard: 3306
 	private static String dbPort = "3306";
@@ -38,7 +38,7 @@ public class MySqlConnector
 	private static String dbUser = "root";
 
 	// Pass
-	private static String dbPassword = "eAsY_Gu1d3<>;";
+	private static String dbPassword = "2guns4roses";
 
 	
 	// Init connection

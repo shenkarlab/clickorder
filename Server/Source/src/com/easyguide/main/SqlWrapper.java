@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
+
+import com.sun.corba.se.impl.orbutil.closure.Constant;
 import com.sun.jmx.snmp.Timestamp;
 import org.json.simple.JSONObject;
 
@@ -38,9 +40,9 @@ public class SqlWrapper
 		
 		JSONObject obj = new JSONObject();
 
-		obj.put( "Command", Commands.COMMAND_CREATE_RECORDING );
-	    obj.put( "ID", ID );
-	    obj.put( "Name", name );
+		obj.put( Commands.KEY_COMMAND, Commands.COMMAND_CREATE_RECORDING );
+	    obj.put( Commands.KEY_RECORDING_ID, ID );
+	    obj.put( Commands.KEY_NAME, name );
 
 	    StringWriter out = new StringWriter();
 	    try 

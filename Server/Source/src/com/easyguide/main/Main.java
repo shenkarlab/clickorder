@@ -22,12 +22,12 @@ import com.google.gson.JsonParser;
 /**
  * Server entry point - implements HttpServlet
  */
-@WebServlet("/EasyGuide")
+@WebServlet("/Main")
 public class Main extends HttpServlet 
 {
 	private static final long 		m_serialVersionID = 1L;
 	private static SqlWrapper 		m_sql;
-	private static final boolean 	DEBUG_MODE = true;
+	private static final boolean 	DEBUG_MODE = false;
 	
        
     /**
@@ -63,7 +63,7 @@ public class Main extends HttpServlet
 			// User real data from request
 			if ( !DEBUG_MODE )
 			{
-				String requestData = request.getParameter( Commands.KEY_DATA  );
+				String requestData = request.getParameter( Commands.KEY_DATA );
 	
 				JsonParser parser = new JsonParser();
 				obj = ( JsonObject )parser.parse( requestData );
@@ -78,13 +78,14 @@ public class Main extends HttpServlet
 			}
 			
 			// Check which command was received
-			switch( commandId )
-			{
-				case Commands.COMMAND_CREATE_RECORDING:
-					CreateRecording( response, obj );
-					
-					break;
-			}
+			//if ( commandId.equals( Commands.COMMAND_CREATE_RECORDING ) )
+			//{
+				CreateEmptyRecording( response, obj );
+			//}
+			//else if ( commandId.equals( Commands.COMMAND_SAVE_RECORDING ) )
+			//{
+				SaveRecording( response, obj );
+			//}
 		}
 		catch ( Exception e )
 		{
@@ -95,7 +96,7 @@ public class Main extends HttpServlet
 	
 	
 	// Creates a new recording
-	private void CreateRecording( HttpServletResponse response, JsonObject json )
+	private void CreateEmptyRecording( HttpServletResponse response, JsonObject json )
 	{
 		String name = json.get( Commands.KEY_NAME ).toString();
 		String result = m_sql.CreateRecording( name );
@@ -108,6 +109,26 @@ public class Main extends HttpServlet
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	
+	
+	// Saves a recording to DB
+	// Update exisiting one if exists or creating new one
+	// Returns the recording ID in response
+	private void SaveRecording( HttpServletResponse response, JsonObject json )
+	{
+		String name = json.get( Commands.KEY_NAME ).toString();
+		String ID = json.get( Commands.KEY_RECORDING_ID ).toString();
+		String result = "";
+		if ( ID == null || ID == "" )
+		{
+			// New recording, first create entry in DB
+			result = m_sql.CreateRecording( name );
+		}
+		
+		// Parse commands
+		
 	}
 	
 }

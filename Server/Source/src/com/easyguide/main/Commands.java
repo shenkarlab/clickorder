@@ -6,7 +6,8 @@ package com.easyguide.main;
 public class Commands 
 {
 	// Commands
-	final static String COMMAND_CREATE_RECORDING 		= "command_create_recording";			// Create new recording and return the ID
+	final static String COMMAND_CREATE_RECORDING 		= "command_create_recording";	// Create new recording and return the ID
+	final static String COMMAND_SAVE_RECORDING			= "command_save_recording";		// Save recording, if ID is empty, creates a new recording ID
 	
 	// Unique keys
 	final static String KEY_COMMAND 					= "key_command";	   	 		// Command to parse
