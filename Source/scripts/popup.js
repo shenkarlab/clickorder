@@ -52,14 +52,11 @@ $("document").ready(function()
         port.postMessage({type: "screenshot"});
     });
 
-<<<<<<< HEAD
-=======
 	// Write note button
     $( '#noteBtn' ).click(function() {
         port.postMessage({type: "showNote"});
     });
 
->>>>>>> origin/master
     // Request data load
     port.postMessage({type: "load"});
 });
