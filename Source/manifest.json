@@ -1,0 +1,55 @@
+{
+  "name": "ClickOrder",
+  "description": "",
+  "icons": {
+    "16": "img/logo.png",
+    "48": "img/logo.png",
+    "128": "img/logo.png"
+  },
+  /*"devtools_page": "devpanel.html",*/
+  "options_page": "popup.html",
+  "version": "1.1",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [ "scripts/jquery-2.1.0.min.js", "scripts//utils.js", "scripts//background.js"]
+  },
+
+  "permissions": ["tabs", "http://*/*", "https://*/*", "pageCapture", "activeTab", "storage", "input"],
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": [ "scripts/jquery-2.1.0.min.js", "scripts/jquery.scrollstop.js", "scripts/eventsListener.js"]
+    }
+  ],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "browser_action": {
+      "default_title": "Recorder",
+      "default_icon": "img//play.png",
+      "default_popup": "popup.html"
+  },
+
+  "commands": {
+    "screenshot" : {
+    "suggested_key" :  { "default" : "Alt+C" },
+    "description" : " Take a screenshot"
+   },
+
+   "startRecording" : {
+    "suggested_key" :  { "default" : "Alt+R" },
+    "description" : " start recording"
+   },
+
+   "pauseRecording" : {
+    "suggested_key" :  { "default" : "Alt+P" },
+    "description" : " start recording"
+   },
+
+   "stopRecording" : {
+    "suggested_key" :  { "default" : "Alt+S" },
+    "description" : " stop recording"
+   }
+  }
+}

@@ -1,0 +1,126 @@
+
+#player
+{
+	height: 1380px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: black;
+	padding:5px 20px; 
+	border-radius:25px;
+	margin-top: 10px;
+}
+
+iframe
+{
+	height: 100%;
+    width: 100%;
+}
+
+#timeline
+{
+	height: 200px;
+
+	background-color: black;
+	
+	margin-top: 20px;
+}
+
+p
+{
+	color: white;
+	
+	font-weight: bold;
+	height: 10px;
+	margin-left: 100px;
+	margin-top: 5px;
+}
+
+
+#timeline_mouseEvents
+{	
+	height: 50px;
+	border-style: solid;
+	border-color: #043968;
+	
+	border-width: 1.5px;
+	background-color: #CE6405;
+	margin-top: 10px;
+
+	overflow: hidden;
+}
+
+#timeline_keyboard, #timeline_photos, #timeline_note
+{	
+	height: 40px;
+	border-style: solid;
+	border-color: #043968;
+	background-color: #051D3F;
+	border-width: 1.5px;
+}
+
+
+#mouseEventsList
+{
+	
+}
+
+#photosEventsList
+{
+	margin-top: 3px;
+}
+
+#keyboardEventsList
+{
+	margin-top: 3px;	
+}
+
+li
+{
+	z-index: 2;
+	border-style:solid;
+	list-style-type: none;
+
+	float: left;
+
+	/*margin-right: 30px;*/
+	width: 20px;
+	height: 20px;
+}
+
+ul#mouseEventsList li
+{
+	background-color: #CE6405; 
+	margin-top: -33px;
+	border-width:2px;
+	border-color: #051D3F;
+	padding:5px 10px; 
+	border-radius:100px;
+}
+
+ul#keyboardEventsList li, ul#photosEventsList li, ul#noteEventsList li
+{
+	border-width:2px;
+	border-color: #CE6405;
+	padding:5px 10px; 
+	border-radius:100px;
+}
+
+hr
+{
+	z-index: 1;
+	border-color: #051D3F;
+	margin-top: 25px;
+}
+
+p {
+    /*CSS reset*/
+    margin-bottom: 0;
+}
+
+/* Changes the bullet before each list item with a picture */
+/*ul#mouseEventsList {
+    list-style-image: url('http://www.techforluddites.com/images/leaf_icon.jpg');
+}*/
+
+

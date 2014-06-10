@@ -1,0 +1,158 @@
+
+#topImage
+{	
+	width: 349px;
+	height: 50px;
+}
+
+#bottomImage
+{			
+	width: 373.5px;
+	height: 45.5px;
+}
+
+#recordBtn
+{
+	width: 30px;
+	height: 30px;
+	margin-left: 90%;
+	margin-top: -11%;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+#screenshotBtn
+{
+	width: 39px;
+	height: 39px;
+	margin-left: 20%;
+	margin-top: -11.5%;
+	background-color: transparent;
+	border-color: transparent;
+	background-image: url(../img/camera_icon.png);
+}
+
+
+#noteBtn
+{
+	width: 39px;
+	height: 39px;
+	margin-left: 35%;
+	margin-top: -11.5%;
+	background-color: transparent;
+	border-color: transparent;
+	background-image: url(../img/note_icon.png);
+}
+
+#recordsList
+{
+	background-color: #666464;
+	padding:0;
+    margin:0; 
+}
+
+
+.recordItem
+{
+	list-style-type: none;
+
+	background-image: url(../img/recordItem.png);
+
+	width: 349px;
+	height: 86px; 
+
+	/*border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: white;*/
+}
+
+.recordCapture
+{
+	width: 133px;
+	height: 85px;
+	margin-top: 0;
+	margin-left: 0;
+}
+
+.commandsTimeline
+{
+	width: 79;
+	height: 79;
+	margin-top: -86;
+	margin-left: 26;
+	position: absolute;
+	z-index: 9999999;
+	background-color: transparent;
+	border-color: transparent;
+	opacity: 0;
+}
+
+.guideName
+{
+	display: inline-block;
+	position: absolute;
+	margin-top: 3px;
+	margin-left: 8px;
+	color: #F37D76;
+	font-size: 26;
+	font-family: aviner;
+}
+
+.guideTime
+{
+	display: inline-block;
+	position: absolute;
+	margin-top: 65px;
+	margin-left: 10px;
+	font-size: 16;
+	color: #929497;
+	font-family: aviner;
+}
+
+.playBtn
+{
+	width: 21px;
+	height: 21px;
+	z-index: 3;
+	position: absolute;
+	margin-top: 1.5%;
+	margin-left: 88%;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.shareBtn
+{
+	width: 33px;
+	height: 31px;
+	margin-left: 91%;
+	margin-top: -9%;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.editBtn
+{
+	width: 35px;
+	height: 32px;
+	margin-left: -19%;
+	margin-top: -9%;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.deleteBtn
+{
+	width: 20px;
+	height: 18px;
+	position: absolute;
+	margin-left: 4%;
+	margin-top: -19%;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+button
+{
+	cursor: pointer;
+}
