@@ -1,15 +1,8 @@
 body{
 	background: white;
-	 z-index: -1;
-}
-.header {
-	position: fixed;
-	background: #00A99D;
-	width: 2000px;
-	height: 150px;
-   top:0;
-   margin: 0 auto;
-    z-index: 2;
+	overflow: scroll;
+    overflow-x: hidden;
+	
 }
 
 @font-face {
@@ -26,12 +19,31 @@ body{
 	font-family: 'title';
 	src:url('../fonts/UniversLTStd-LightCn.otf');
 }
+
+.header {
+	position: fixed;
+	background: #00A99D;
+	width: 100%;
+    margin-top: -650px;
+	height: 200px;
+
+
+}
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+.main{
+	margin-top: 220px;
+}
  /* image */
 .fc-slideshow {
 	position: relative;
 	width: 414px;
 	height: 414px;
-	border-radius: 50%;
 	margin: 0 auto;
 	-webkit-perspective: 1200px;
 	-moz-perspective: 1200px;
@@ -100,7 +112,6 @@ body{
 
 /* Some fallbacks */
 .no-csstransforms3d .fc-slideshow nav > div span {
-	z-index: 1000;
 	width: 40px;
 	background: rgba(0,0,0,0);
 }
