@@ -22,13 +22,17 @@ body{
 
 .header {
 	position: fixed;
-	background: #00A99D;
+	background: #1F3F63;
 	width: 100%;
-    margin-top: -650px;
+    margin-top: -700px;
 	height: 200px;
 
-
+	z-index: -1;
 }
+.logo{
+	margin-left: 20px;
+}
+
 *{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -42,8 +46,8 @@ body{
  /* image */
 .fc-slideshow {
 	position: relative;
-	width: 414px;
-	height: 414px;
+	width: 289px;
+	height: 289px;
 	margin: 0 auto;
 	-webkit-perspective: 1200px;
 	-moz-perspective: 1200px;
@@ -160,32 +164,7 @@ body{
 	right: -60px;
 }
 
-.icon-arrow-left:before, 
-.icon-arrow-right:before {
-	font-family: 'entypo';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	
-	color: #fff;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	display: inline-block;
-	margin: 0 20px;
-	border-radius: 20% 10% 50% 5% / 25% 10% 30% 75%;
-	-webkit-font-smoothing: antialiased;
-}
-
-.icon-arrow-left:before {
-	content: "\e002";
-}
-
-.icon-arrow-right:before {
-	content: "\e003";
-}
+.
 
 .csstransforms3d .fc-slideshow nav > div span:hover ~ i,
 .no-csstransforms3d .fc-slideshow nav i,
@@ -265,14 +244,13 @@ ul.fc-slides li {
 	position: absolute;
 	color: #fff;
 	top: 50%;
-	margin-top: 120px;
+	margin-top: 80px;
 	line-height: 50px;
 	height: 50px;
 	left: 80px;
 	right: 80px;
 	font-family: 'title';
-	font-size: 22px;
-	text-transform: uppercase;
+	font-size: 18px;
 	letter-spacing: 2px;
 	text-align: center;
 	border-radius: 20% 10% 50% 5% / 25% 10% 30% 75%;
