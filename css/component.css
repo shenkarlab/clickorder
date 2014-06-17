@@ -1,7 +1,8 @@
 body{
-	background: white;
+	background: green;
 	overflow: scroll;
     overflow-x: hidden;
+    height: 2000px;
 	
 }
 
@@ -20,16 +21,18 @@ body{
 	src:url('../fonts/UniversLTStd-LightCn.otf');
 }
 
+
 .header {
 	position: fixed;
-	background: #1F3F63;
+	background: yellow;
 	width: 100%;
-    margin-top: -700px;
+    margin-top: -80px;
 	height: 200px;
-
 	z-index: -1;
 }
 .logo{
+	background: pink;
+	width:260px;
 	margin-left: 20px;
 }
 
@@ -41,11 +44,13 @@ body{
 	margin: 0;
 }
 .main{
+	background: blue; 
 	margin-top: 220px;
 }
  /* image */
 .fc-slideshow {
 	position: relative;
+	background: red;
 	width: 289px;
 	height: 289px;
 	margin: 0 auto;
