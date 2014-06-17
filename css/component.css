@@ -1,62 +1,18 @@
-body{
-	background: green;
-	overflow: scroll;
-    overflow-x: hidden;
-    height: 2000px;
-	
-}
-
-@font-face {
-	font-family: 'entypo';
-	src:url('../fonts/entypo.eot');
-	src:url('../fonts/entypo.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/entypo.svg#entypo') format('svg'),
-		url('../fonts/entypo.woff') format('woff'),
-		url('../fonts/entypo.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'title';
-	src:url('../fonts/UniversLTStd-LightCn.otf');
-}
 
 
-.header {
-	position: fixed;
-	background: yellow;
-	width: 100%;
-    margin-top: -80px;
-	height: 200px;
-	z-index: -1;
-}
-.logo{
-	background: pink;
-	width:260px;
-	margin-left: 20px;
-}
 
-*{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-}
-.main{
-	background: blue; 
-	margin-top: 220px;
-}
  /* image */
 .fc-slideshow {
 	position: relative;
-	background: red;
+	background: white;
 	width: 289px;
 	height: 289px;
+
 	margin: 0 auto;
 	-webkit-perspective: 1200px;
 	-moz-perspective: 1200px;
 	perspective: 1200px;
+	
 }
 
 .fc-slideshow nav {
@@ -254,7 +210,7 @@ ul.fc-slides li {
 	height: 50px;
 	left: 80px;
 	right: 80px;
-	font-family: 'title';
+	font-family: 'Univers';
 	font-size: 18px;
 	letter-spacing: 2px;
 	text-align: center;

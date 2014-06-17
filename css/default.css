@@ -28,12 +28,129 @@ html { height: 100%; }
     *zoom: 1;
 }
 
-body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    background: #ff514c url(../images/noise.png);
-    font-weight: 400;
-    font-size: 15px;
-    color: #fff;
+
+
+body{
+    background: green;
     overflow: scroll;
     overflow-x: hidden;
+    height: 2000px;
+    
+}
+
+@font-face {
+    font-family: 'entypo';
+    src:url('../fonts/entypo.eot');
+    src:url('../fonts/entypo.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/entypo.svg#entypo') format('svg'),
+        url('../fonts/entypo.woff') format('woff'),
+        url('../fonts/entypo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Univers';
+    src:url('../fonts/UniversLTStd-LightCn.otf');
+}
+
+
+.header {
+    position: absolute;
+    background: #00A99D;
+    width: 100%;
+    margin-top: -70px;
+    height: 200px;
+
+    z-index: -1;
+}
+.logo{
+     position: relative;
+    background: #00A99D;
+    width:260px;
+    margin-left: 40px;
+    margin-top: 40px;
+ padding-bottom: 64px;
+}
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.gallery{
+    background: white; 
+    width: 300px;
+    height: 400px; 
+   padding-top: 60px;
+ margin-left:360px;
+   display: inline-block;
+  
+
+}
+.middlewrapper{
+    position: absolute;
+    background: white;
+    width: 100%;
+}
+
+.middle{
+     position: relative;
+    background: white;
+    width: 1024px;
+    height: 400px;
+    margin: 0 auto;
+
+}
+.text_right{
+   position: absolute;
+    letter-spacing: 1px;
+    background: white;
+    color: #1F3E63;
+    width: 290px;
+     display: inline-block;
+    font-family: 'Univers';
+    margin-left: 10px;
+
+  margin-top: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 30px;
+    border-top: 2px solid #1F3E63;
+ border-bottom:2px solid #1F3E63; 
+    text-align: center;
+}
+.info{
+font-family: 'Univers';
+ font-size: 20px;   
+ line-height: 15px;
+  color: #1F3E63;
+}
+
+.text_left{
+   position: absolute;
+    letter-spacing: 1px;
+    background: white;
+    color: #1F3E63;
+    width: 290px;
+     display: inline-block;
+    font-family: 'Univers';
+    margin-left: 64px;
+
+  margin-top: 170px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 30px;
+    border-top: 2px solid #1F3E63;
+ border-bottom:2px solid #1F3E63; 
+    text-align: center;
+}
+/* unvisited link */
+a:link {
+    text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+color: #F37D75;
 }
