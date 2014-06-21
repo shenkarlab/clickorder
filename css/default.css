@@ -56,20 +56,26 @@ body{
 
 .header {
     position: absolute;
-    background: #00A99D;
+    background:white;
     width: 100%;
     margin-top: -70px;
-    height: 200px;
+    height: 150px;
 
     z-index: -1;
 }
 .logo{
-     position: relative;
-    background: #00A99D;
-    width:260px;
+     position:relative;
+    background: white;
+    
     margin-left: 40px;
     margin-top: 40px;
- padding-bottom: 64px;
+ padding-bottom: 20px;
+ 
+}
+.screenframe{
+     position:relative;
+    
+   display: inline-block;
 }
 
 *{
@@ -150,7 +156,25 @@ font-family: 'Univers';
 a:link {
     text-decoration: none;
 }
+
+
+/* unvisited link */
+a:link {
+color: #1F3E63;
+}
+
+/* visited link */
+a:visited {
+color: #1F3E63;
+}
+
 /* mouse over link */
 a:hover {
 color: #F37D75;
 }
+
+/* selected link */
+a:active {
+color: #1F3E63;
+}
+
