@@ -34,7 +34,7 @@ body{
     background: green;
     overflow: scroll;
     overflow-x: hidden;
-    height: 2000px;
+    height: 1000px;
     
 }
 
@@ -52,7 +52,10 @@ body{
     font-family: 'Univers';
     src:url('../fonts/UniversLTStd-LightCn.otf');
 }
-
+@font-face {
+    font-family: 'Universbold';
+    src:url('../fonts/UniversLTStd-BoldCn.otf');
+}
 
 .header {
     position: absolute;
@@ -68,7 +71,7 @@ body{
     background: white;
     
     margin-left: 40px;
-    margin-top: 40px;
+    margin-top: 20px;
  padding-bottom: 20px;
  
 }
@@ -99,6 +102,7 @@ body{
     position: absolute;
     background: white;
     width: 100%;
+    margin-top: -10px;
 }
 
 .middle{
@@ -114,24 +118,24 @@ body{
     letter-spacing: 1px;
     background: white;
     color: #1F3E63;
-    width: 290px;
+    width:310px;
      display: inline-block;
     font-family: 'Univers';
     margin-left: 10px;
-
-  margin-top: 60px;
-    padding-top: 15px;
+line-height: 26px;
+  margin-top: 80px;
+    padding-top: 30px;
     padding-bottom: 15px;
-    font-size: 30px;
+    font-size: 20px;
     border-top: 2px solid #1F3E63;
  border-bottom:2px solid #1F3E63; 
     text-align: center;
 }
 .info{
-font-family: 'Univers';
- font-size: 20px;   
- line-height: 15px;
-  color: #1F3E63;
+font-family: 'Universbold';
+ font-size: 16px;   
+ line-height:5px;
+   color: #1F3E63;
 }
 
 .text_left{
@@ -178,3 +182,111 @@ a:active {
 color: #1F3E63;
 }
 
+.titlewrapper{
+background:  #CBF4F0;
+width: 100%;
+
+
+}
+.title{
+
+background:  #CBF4F0;
+ 
+width: 1280px;
+ margin: 0px auto;
+     position: relative;    
+  
+}
+
+
+.use{
+    position: relative;
+color: #1F3E63;
+ background: #CBF4F0;
+border-bottom:2px solid #1F3E63;  
+font-family: 'Univers';
+font-size: 29px;
+margin-top: 389px;
+height: 100px;
+margin-left: 367px;
+text-align: center;
+padding-top: 35px;
+width: 500px;
+line-height: 30px;
+
+}
+.use2{
+
+    font-family: 'Universbold';
+font-size: 20px;
+line-height: 20px;
+}
+.cartoonwrapper{
+width: 100%;
+    background:#CBF4F0;
+
+}
+
+
+.cartoon_gallery{
+ margin: 0px auto;
+     position: relative;   
+    
+  height: 380px;
+    width: 1280px;
+    background:#CBF4F0;
+    padding-left: 50px;
+
+}
+.cartoonlist li {
+
+ background: #CBF4F0;
+ height: 300px;
+width: 250px;
+
+    position: relative;
+ display: inline-block;
+ margin-top: 10px;  
+ margin-left:90px;
+}
+
+.text1{
+font-size: 15px;
+font-family: 'Universbold';
+color: #1F3E63;
+margin-left: 50px;
+}
+.text2{
+font-size: 15px;
+font-family: 'Universbold';
+color: #1F3E63;
+margin-left: 65px;
+}
+.text3{
+font-size: 15px;
+font-family: 'Universbold';
+color: #1F3E63;
+margin-left: 40px;
+}
+
+
+
+.footerwrapper{
+ 
+width: 100%;
+    background:white;
+
+}
+.footer{
+     position: relative;   
+    margin-top: 500px;
+  height: 100px;
+    width: 1280px;
+    background:blue;
+    padding-left: 50px;
+z-index: 30
+}
+
+.names{
+background: pink;
+}
