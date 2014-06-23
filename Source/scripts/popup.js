@@ -19,6 +19,8 @@ var timelineImages = [ "click", "keyboard", "scroll", "capture", "rightclick", "
 
 var isRunningTimeline = false;
 
+var currentRecordingId;
+
   ////////////
  // EVENTS //
 ////////////
@@ -99,7 +101,7 @@ function init()
         var li = "<li id=" + recording.id + "><div class='recordItem'>" +
                     "<button class='playBtn' />" + 
                     "<img class='recordCapture' src='" + recording.capture + "'/>" +
-                    "<img class='commandsTimeline'/>" +
+                    "<img class='commandsTimeline' id='commandsTimeline" + recording.id + "'/>" +
                     "<div class='guideName'>" + recording.name + "</div>" + 
                     "<div class='guideTime'>" + recording.length + " | " + dateFormat + "</div>" +
                     "<button class='shareBtn'/>" +
@@ -119,22 +121,29 @@ function init()
         port.postMessage({type: "playRecording", index: recordingId});
     });
 
-    $(".commandsTimeline")
+    $(".recordCapture")
         .mouseover(function() { 
 
             if (!isRunningTimeline)
             {
+                $(".commandsTimeline").css('opacity', 0);
+                $(".commandsTimeline").attr('display', 'none');
                 isRunningTimeline = true;
-                $(".commandsTimeline").css('opacity', 100);
-                var recordingId = $(this).closest("li").attr("id");
-                var commands = getRecordById(recordingId).data;
+                currentRecordingId = $(this).closest("li").attr("id");
+                $("#commandsTimeline" + currentRecordingId).css('opacity', 100);
+                var commands = getRecordById(currentRecordingId).data;
                 animateTimeline(0, commands);
             }
+            else
+            {
+                $(".commandsTimeline").css('opacity', 0);
+                $(".commandsTimeline").attr('display', 'none');
+            }
+
+                
         })
         .mouseout(function() {
             isRunningTimeline = false;
-            $(".commandsTimeline").css('opacity', 0);
-            $(".commandsTimeline").attr('display', 'none');
         });
 
 }
@@ -217,7 +226,7 @@ function postCommand(command)
 
 function animateTimeline(index, commands)
 {
-    var image = $(".commandsTimeline");
+    var image = $("#commandsTimeline" + currentRecordingId);
 
     image.fadeOut('slow', function () {
         image.attr('src', getIconByCommand(commands[index].id));
@@ -227,6 +236,13 @@ function animateTimeline(index, commands)
     if (isRunningTimeline && index < commands.length - 1) {
         setTimeout(function() {
             animateTimeline((index + 1) % (commands.length - 1), commands);
+            $(".commandsTimeline").css('opacity', 0);
+            $(".commandsTimeline").attr('display', 'none');
         }, 1300);
+    }
+    else
+    {
+        $(".commandsTimeline").css('opacity', 0);
+        $(".commandsTimeline").attr('display', 'none');
     }
 }
