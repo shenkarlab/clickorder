@@ -56,6 +56,10 @@ body{
     font-family: 'Universbold';
     src:url('../fonts/UniversLTStd-BoldCn.otf');
 }
+@font-face {
+    font-family: 'Universlight';
+    src:url('../fonts/UniversLTStd-Light.otf');
+}
 
 .header {
     position: absolute;
@@ -63,8 +67,8 @@ body{
     width: 100%;
     margin-top: -70px;
     height: 150px;
-
-    z-index: -1;
+     
+    z-index: 1000;
 }
 .logo{
      position:relative;
@@ -73,12 +77,13 @@ body{
     margin-left: 40px;
     margin-top: 20px;
  padding-bottom: 20px;
- 
+ z-index: 1200;
 }
 .screenframe{
      position:relative;
-    
+    margin-top: -22px;
    display: inline-block;
+   background: #F37D76;
 }
 
 *{
@@ -93,7 +98,7 @@ body{
     width: 300px;
     height: 400px; 
    padding-top: 60px;
- margin-left:360px;
+ margin-left:490px;
    display: inline-block;
   
 
@@ -108,7 +113,7 @@ body{
 .middle{
      position: relative;
     background: white;
-    width: 1024px;
+    width: 1280px;
     height: 400px;
     margin: 0 auto;
 
@@ -121,15 +126,15 @@ body{
     width:310px;
      display: inline-block;
     font-family: 'Univers';
-    margin-left: 10px;
+     margin-left: 50px;
 line-height: 26px;
-  margin-top: 80px;
+ font-size: 20px;
+  margin-top: 100px;
     padding-top: 30px;
     padding-bottom: 15px;
-    font-size: 20px;
+   
     border-top: 2px solid #1F3E63;
  border-bottom:2px solid #1F3E63; 
-    text-align: center;
 }
 .info{
 font-family: 'Universbold';
@@ -146,7 +151,8 @@ font-family: 'Universbold';
     width: 290px;
      display: inline-block;
     font-family: 'Univers';
-    margin-left: 64px;
+    margin-left: 110px;
+    text-align: center;
 
   margin-top: 170px;
     padding-top: 15px;
@@ -154,7 +160,6 @@ font-family: 'Universbold';
     font-size: 30px;
     border-top: 2px solid #1F3E63;
  border-bottom:2px solid #1F3E63; 
-    text-align: center;
 }
 /* unvisited link */
 a:link {
@@ -181,6 +186,66 @@ color: #F37D75;
 a:active {
 color: #1F3E63;
 }
+/*video*/
+
+
+.videowrapper{
+     position: absolute;  
+    width: 100%;
+  background: #00A79D;
+    height: 400px;
+    margin-top: 390px;
+     
+z-index: 1;
+}
+
+.videof{
+     position: relative;  
+     width: 1280px;
+  background: #00A79D;
+height: 400px;
+ 
+ margin: 0px auto;
+}
+
+
+
+.try{
+ font-family: 'Universbold';
+ font-size: 28px;
+ color:white;
+ 
+ width: 500px;
+ position: absolute;
+  display: inline-block;
+  height: 270px;
+  margin-top: 120px;
+   
+   padding-left: 55px;
+}
+.sub2{
+     font-size: 33px;
+
+ border-bottom:2px solid white;    
+}
+.sub{
+  font-family: 'Univers';
+ line-height: 40px;
+ font-size: 25px;
+ padding-top: 30px;
+
+}
+.video {
+    background: #CBF4F0;
+   position: absolute;
+     display: inline-block;
+   margin-left:772px;
+     margin-top: 40px;
+}
+
+
+/* cartoons*/
+
 
 .titlewrapper{
 background:  #CBF4F0;
@@ -206,7 +271,7 @@ color: #1F3E63;
 border-bottom:2px solid #1F3E63;  
 font-family: 'Univers';
 font-size: 29px;
-margin-top: 389px;
+margin-top: 780px;
 height: 100px;
 margin-left: 367px;
 text-align: center;
@@ -269,24 +334,131 @@ color: #1F3E63;
 margin-left: 40px;
 }
 
-
+/*footer*/
 
 .footerwrapper{
- 
+ position: absolute;
 width: 100%;
-    background:white;
-
+    background:black;
+ height: 240px;
+ padding-top: 20px;
 }
 .footer{
      position: relative;   
     margin-top: 500px;
-  height: 100px;
+  height: 210px;
     width: 1280px;
-    background:blue;
+    background:black;
     padding-left: 50px;
-z-index: 30
+margin: 0px auto;
 }
 
-.names{
-background: pink;
+
+
+.devolp{
+
+width: 300px;
+display: inline-block;
+list-style: none;
 }
+.devolp li{
+    margin-bottom: 10px;
+}
+.team{
+font-size: 20px;
+font-family: 'Universbold';
+color: white;
+ margin-left: 50px;
+}
+
+.Programm{
+font-size: 15px;
+font-family: 'Univers';
+color:#F37D75;
+line-height: 15px;
+ margin-left: 200px;  
+
+}
+.gold,.eran,.yor{
+font-size: 15px;
+font-family: 'Univers';
+color: white;
+line-height: 15px;
+ margin-left: 200px;
+padding-right: 5px;
+ border-right:1px solid white;
+}
+.goldm,.eranm,.yorm{
+  font-size: 11px;
+  line-height: 13px;
+font-family: 'Universlight';
+color: white;
+ margin-left: 200px;
+
+}
+.design{
+    position: absolute;
+   line-height: 15px;
+   display: inline-block;
+  list-style: none;
+  margin-left: 70px;
+  font-size: 15px;
+font-family: 'Univers';
+
+}
+.design li{
+    margin-bottom: 10px;
+}
+.designer{
+font-size: 15px;
+font-family: 'Univers';
+color:#F37D75;
+line-height: 15px;
+
+}
+.poly{
+font-size: 15px;
+font-family: 'Univers';
+color: white;
+line-height: 15px;
+
+padding-right: 5px;
+ border-right:1px solid white;
+
+
+
+
+}
+.polym{
+  font-size: 11px;
+  line-height: 13px;
+font-family: 'Universlight';
+color: white;
+ 
+}
+.contect{
+    width: 300px;
+    list-style: none;
+display: inline-block;
+
+position: absolute;
+margin-left: 600px;
+}
+.contect li{
+    margin-bottom: 7px;
+}
+.conecttext{
+   font-size: 15px;
+font-family: 'Univers';
+color:#F37D75;
+line-height: 15px;
+
+}
+
+.face,.tweet{
+    margin-left: 25px;
+  
+}
+
+
+
