@@ -8,13 +8,13 @@ var dataOnj = [{"id":"url","name":"http://www.shenkar.ac.il/home/","time":140360
 {"id":"scroll","name":"0,135","time":1403602350802}];
 
 
-var DEBUG = true;
-var recordingName = "Test";	// Comment when not debug
-var recordingData;
+var DEBUG = false;
+//var recordingName = "Test";	// Comment when not debug
+//var recordingData;
+//var url;
 
 var deltaPink = 0;
 var thread;
-var url;
 var isPlaying;
 var currentTime;
 var totalDuration;
@@ -41,6 +41,7 @@ function init(){
 	if ( DEBUG )
 	{
 		// Nothing
+		url = dataOnj[0]["name"];
 	}
 	else
 	{
@@ -48,7 +49,7 @@ function init(){
 		dataOnj = recordingData;
 	}
 	
-	url = dataOnj[0]["name"];
+	
 	document.getElementById('site').src = url;
 	document.getElementById('upperText').innerHTML = recordingName;
 	
@@ -312,7 +313,9 @@ function noteButtonClose()
 
 window.onload = function()
 {
+	alert("1");
 	init();
+	
 }
 
 

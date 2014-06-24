@@ -233,6 +233,11 @@ chrome.runtime.onConnect.addListener(function(port) {
 	{
 		loadNoteDialogue();
 	}
+	else if (msg.type == "edit" )
+	{
+		var recording = getRecordById(msg.index);
+		startEditing(recording.data, recording.startingUrl, msg.index);
+	}
   });
 });
 
@@ -304,6 +309,23 @@ function startSimulation(data, startingUrl)
     });
 
   }); 
+}
+
+function startEditing(data, startingUrl, name)
+{
+  chrome.tabs.create({ url: "Player.html", active: false }, function(tab) 
+  {    
+    chrome.tabs.update(tab.id, { active: true });
+
+    // Inject jquery 
+    chrome.tabs.executeScript(tab.id, {file: "scripts/jquery-2.1.0.min.js"}, function() {
+    // Inject script with array of commands as json  
+    chrome.tabs.executeScript( tab.id, {code: "var url =" + startingUrl});
+	chrome.tabs.executeScript( tab.id, {code: "var recordingData =" + JSON.stringify(data)});
+	chrome.tabs.executeScript( tab.id, {code: "var recordingName =" + name});
+	chrome.tabs.executeScript(tab.id, {file: "scripts/executionScript.js"});
+	});
+	});
 }
 
 function resetTimeCounter()

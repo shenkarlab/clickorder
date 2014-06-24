@@ -125,7 +125,7 @@ function init()
 
     $( ".editBtn" ).click(function() {
         var recordingId = $(this).closest("li").attr("id");
-        // Open editor
+        port.postMessage({type: "edit", index: recordingId});
     });
 
     $(".recordCapture").hover(function() {
