@@ -123,6 +123,11 @@ function init()
         port.postMessage({type: "playRecording", index: recordingId});
     });
 
+    $( ".editBtn" ).click(function() {
+        var recordingId = $(this).closest("li").attr("id");
+        // Open editor
+    });
+
     $(".recordCapture").hover(function() {
         currentRecordingId = $(this).closest("li").attr("id");
         if (!timeoutId) {
