@@ -2,9 +2,9 @@
   "name": "ClickOrder",
   "description": "",
   "icons": {
-    "16": "img/logo.png",
-    "48": "img/logo.png",
-    "128": "img/logo.png"
+    "16": "img/logo/logo16.png",
+    "48": "img/logo/logo48.png",
+    "128": "img/logo/logo128.png"
   },
   /*"devtools_page": "devpanel.html",*/
   "options_page": "popup.html",

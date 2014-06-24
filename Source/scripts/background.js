@@ -124,9 +124,9 @@ function setExtensionIcon()
       iconPath = getIconByCommand(ExtensionData.commands[lastCommandIndex].id);
       break;
 
-    case "stop":
     default:
-      iconPath = "img/logo.png"
+      iconPath = "img/logo/logo48.png"
+      break;
   }
 
   chrome.tabs.getSelected(null, function(tab) {
