@@ -129,7 +129,7 @@ function init()
             timeoutId = window.setTimeout(function() {
                 timeoutId = null;
                 isRunningTimeline = true;
-                $("#commandsTimeline" + currentRecordingId).css('opacity', 100);
+                
                 var commands = getRecordById(currentRecordingId).data;
                 animateTimeline(0, commands);
            }, 1100);
@@ -231,6 +231,7 @@ function animateTimeline(index, commands)
 
     image.fadeOut('slow', function () {
         image.attr('src', getIconByCommand(commands[index].id));
+        image.css('opacity', 100);
         image.fadeIn('slow', onAnimationFinished());
     });
 

@@ -92,6 +92,7 @@
 	background-color: transparent;
 	border-color: transparent;
 	opacity: 0;
+	border-style: hidden;
 }
 
 .guideName

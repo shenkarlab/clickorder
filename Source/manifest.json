@@ -14,7 +14,7 @@
     "scripts": [ "scripts/jquery-2.1.0.min.js", "scripts//utils.js", "scripts//background.js"]
   },
 
-  "permissions": ["tabs", "http://*/*", "https://*/*", "pageCapture", "activeTab", "storage", "input", "file:///*"],
+  "permissions": ["tabs", "http://*/*", "https://*/*", "pageCapture", "activeTab", "storage", "input", "file://*/*"],
 
   "content_scripts": [
     {
