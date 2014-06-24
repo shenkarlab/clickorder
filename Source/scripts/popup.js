@@ -21,6 +21,8 @@ var isRunningTimeline = false;
 
 var currentRecordingId;
 
+var timeoutId;
+
   ////////////
  // EVENTS //
 ////////////
@@ -121,31 +123,30 @@ function init()
         port.postMessage({type: "playRecording", index: recordingId});
     });
 
-    $(".recordCapture")
-        .mouseover(function() { 
-
-            if (!isRunningTimeline)
-            {
-                $(".commandsTimeline").css('opacity', 0);
-                $(".commandsTimeline").attr('display', 'none');
+    $(".recordCapture").hover(function() {
+        currentRecordingId = $(this).closest("li").attr("id");
+        if (!timeoutId) {
+            timeoutId = window.setTimeout(function() {
+                timeoutId = null;
                 isRunningTimeline = true;
-                currentRecordingId = $(this).closest("li").attr("id");
                 $("#commandsTimeline" + currentRecordingId).css('opacity', 100);
                 var commands = getRecordById(currentRecordingId).data;
                 animateTimeline(0, commands);
-            }
-            else
-            {
-                $(".commandsTimeline").css('opacity', 0);
-                $(".commandsTimeline").attr('display', 'none');
-            }
-
-                
-        })
-        .mouseout(function() {
-            isRunningTimeline = false;
-        });
-
+           }, 1100);
+        }
+    },
+    function () {
+        if (timeoutId) {
+            window.clearTimeout(timeoutId);
+            timeoutId = null;
+        }
+        else {
+           isRunningTimeline = false;
+        }
+    })
+    .mouseout(function() {
+        isRunningTimeline = false;
+    });
 }
 
 
@@ -230,19 +231,21 @@ function animateTimeline(index, commands)
 
     image.fadeOut('slow', function () {
         image.attr('src', getIconByCommand(commands[index].id));
-        image.fadeIn('slow');
+        image.fadeIn('slow', onAnimationFinished());
     });
 
     if (isRunningTimeline && index < commands.length - 1) {
         setTimeout(function() {
             animateTimeline((index + 1) % (commands.length - 1), commands);
-            $(".commandsTimeline").css('opacity', 0);
-            $(".commandsTimeline").attr('display', 'none');
         }, 1300);
     }
-    else
+}
+
+function onAnimationFinished()
+{
+    if (!isRunningTimeline)
     {
-        $(".commandsTimeline").css('opacity', 0);
-        $(".commandsTimeline").attr('display', 'none');
+        $("#commandsTimeline" + currentRecordingId).css('opacity', 0);
+        $("#commandsTimeline" + currentRecordingId).attr('display', 'none'); 
     }
 }
