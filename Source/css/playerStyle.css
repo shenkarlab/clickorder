@@ -1,14 +1,8 @@
+@font-face { font-family: Univers; src: url('../fonts/UniversLTStd-BoldCn.otf'); }
 
 #player
 {
-	height: 1380px;
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-	background-color: black;
-	padding:5px 20px; 
-	border-radius:25px;
-	margin-top: 10px;
+	height: 760px;
 }
 
 iframe
@@ -19,108 +13,234 @@ iframe
 
 #timeline
 {
+	position: relative;
+	width: 1280px;
 	height: 200px;
-
-	background-color: black;
-	
 	margin-top: 20px;
+	margin-left: auto ;
+	margin-right: auto ;
 }
-
-p
-{
-	color: white;
-	
-	font-weight: bold;
-	height: 10px;
-	margin-left: 100px;
-	margin-top: 5px;
+.blueWrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
-
-
-#timeline_mouseEvents
-{	
-	height: 50px;
-	border-style: solid;
-	border-color: #043968;
-	
-	border-width: 1.5px;
-	background-color: #CE6405;
-	margin-top: 10px;
-
-	overflow: hidden;
-}
-
-#timeline_keyboard, #timeline_photos, #timeline_note
-{	
-	height: 40px;
-	border-style: solid;
-	border-color: #043968;
-	background-color: #051D3F;
-	border-width: 1.5px;
-}
-
-
-#mouseEventsList
-{
-	
-}
-
-#photosEventsList
-{
-	margin-top: 3px;
-}
-
-#keyboardEventsList
-{
-	margin-top: 3px;	
-}
-
-li
-{
-	z-index: 2;
-	border-style:solid;
-	list-style-type: none;
-
+.leftBlueWrapper{
 	float: left;
-
-	/*margin-right: 30px;*/
+	width: 74px;
+	height: 156px;
+}
+.leftBlue{
+	float: left;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/leftbluestrip.png);
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 74px 156px;
+}
+.timeLineWrapper {
+	float: left;
+	height: 28%;
+	width: 1124px;
+}
+.curlBlue {
 	width: 20px;
-	height: 20px;
+	height: 24px;
+	background-image: url(../img/BLUESTRIPCURVE.png);
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 20px 24px;
 }
-
-ul#mouseEventsList li
-{
-	background-color: #CE6405; 
-	margin-top: -33px;
-	border-width:2px;
-	border-color: #051D3F;
-	padding:5px 10px; 
-	border-radius:100px;
+.timeLineBg{
+	position: absolute;
+	width: 1124px;
+	height: 32px;
+	background-image: url(../img/timeline_bg.png);
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 1280px 32px;	
+	top: 12%;
 }
-
-ul#keyboardEventsList li, ul#photosEventsList li, ul#noteEventsList li
-{
-	border-width:2px;
-	border-color: #CE6405;
-	padding:5px 10px; 
-	border-radius:100px;
+.timeLineBgPink{
+	background-color: #F37C76;
+	width: 0%;
+	height: 32px;
 }
-
-hr
-{
+.blueWhiteWrapper{
+	float: left;
+	height: 50%;
+	width: 1124px;
+	background-color: red;
+}
+.whiteWrapper{
+	position: relative;
+	height: 76.8%;
+	width: 100%;
+	background-color: #F3F3F4;	
+}
+.grayWrapper{
+	position: relative;
+	height: 23.2%;
+	width: 100%;
+	background-color: #5C748E;
+}
+.textLeftMainWrapper{
+	position: absolute;
+	height: 78%;
+	width: 5.5%;
+	text-align: center;
+}
+.upperTextWrapper{
+	position: relative;
+	height: 35.6%;
+}
+#upperText{
+	position: relative;
+	width: 80%;
+	height: 50%;
+	color: #F37C76;
+	font-size: 16px;
+	font-family: Univers;
+}
+.upperButton{	
+	position: relative;
+	width: 22px;
+	height: 21px;
+	border-color: transparent;
+	background-color: transparent;
+	background-image: url(../img/play_small.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: contain;
+}	
+.upperButtonRestart{	
+	position: relative;
+	width: 22px;
+	height: 21px;
+	border-color: transparent;
+	background-color: transparent;
+	background-image: url(../img/restart.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: contain;
+}	
+.middleTextWrapper{
+	position: relative;
+	height: 47.7%;
+	margin-top: 2.6%;
+}
+.middleText{
+	position: relative;
+	width: 51%;
+	height: 100%;
+	color: white;
+	font-size: 12px;
+	font-family: Univers;
+}
+.lowerTextWrapper{
+	position: relative;
+	height: 14.3%;
+	margin-top: 2.2%;
+}
+.lowerText{
+	float:left;
+	width: 45%;
+	height: 100%;
+	color: white;
+	font-size: 12px;
+	font-family: Univers;
+}
+.lowerButton{
+	position: absolute;
+	border-color: transparent;
+	background-color: transparent;
+	float:left;
+	width: 100%;
+	height: 100%;
+	margin-left: -10px;
+	background-image: url(../img/add_note.png);
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	background-size: contain;
+	z-index: 2;
+}
+.timeLineCursor{
+	position: relative;
+	left: -1%;
 	z-index: 1;
-	border-color: #051D3F;
-	margin-top: 25px;
+	top: -41%;
+	width: 18px;
+	height: 123px;
+	background-image: url(../img/timelinecursor.png);
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 18px 124px
+}
+.click_a{
+	background-image: url("../img/newpage.png");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 33px 33px;
+}
+.click_input_submit{
+	background-image: url("../img/left.png");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 33px 33px;
+}
+.click_input_checkbox{
+	background-image: url("../img/left.png");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 33px 33px;
+}
+.click_input_text{
+	background-image: url("../img/left.png");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 33px 33px;
+}
+.scroll{
+	background-image: url("../img/scrool.png");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 33px 33px;
+}
+.rightclick{
+	background-image: url("../img/right.png");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 33px 33px;
+}
+.keyboard{
+	background-image: url("../img/type.png");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 33px 33px;
+}
+.note{
+	background-image: url("../img/note.png");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 72px 23px;
+}
+.iconClass{
+	width: 33px;
+	height: 33px;
+	position: absolute;
+	top: 29%;
+	/*float: left;*/
+}
+.noteClass{
+	width: 72px;
+	height: 23px;
+	position: absolute;
+	top: 0%;
+	/*float: left;*/
 }
 
-p {
-    /*CSS reset*/
-    margin-bottom: 0;
+button
+{
+	cursor: pointer;
 }
-
-/* Changes the bullet before each list item with a picture */
-/*ul#mouseEventsList {
-    list-style-image: url('http://www.techforluddites.com/images/leaf_icon.jpg');
-}*/
-
-

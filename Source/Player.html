@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset=utf-8>
+	<script src="scripts/jquery-2.1.0.min.js"></script>
+	<script src="scripts/utils.js"></script>
+	<script src="scripts/player.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/playerStyle.css">
+	<link rel="stylesheet" type="text/css" href="css/noteStyle.css">
+  
+</head>
+
+<body>
+	<div id="noteWindow">
+		<form class="noteForm">
+			<input type="text" id="noteTitle" value="Title" /> 
+		</form>
+		<textarea rows="5" cols="32" id="noteMessage"> Message
+		</textarea>
+		<button class="btnCloseNote" onclick="noteButtonClose(this);"></button>
+	</div>
+
+	<section id="wrapper">
+ 
+		<div id="player" >
+			<iframe id="site" src="http://www.walla.com"></iframe>
+		</div>
+		
+
+
+		<div id="timeline">
+			<div class="blueWrapper">
+				<div class="leftBlueWrapper">	
+					<div class="leftBlue">
+					</div>
+					<div class="textLeftMainWrapper">
+						<div class="upperTextWrapper">
+							<div id="upperText"> Text</div>
+							<button class="upperButton" onclick="playButtonClick(this);" >
+							</button>
+							<button class="upperButtonRestart" onclick="restartButtonClick(this);">
+							</button>
+						</div>
+						<div class="middleTextWrapper">
+							<div class="middleText"> Viewer</div>
+						</div>
+						<div class="lowerTextWrapper">
+							<div class="lowerText"> Notes </div>
+							<button class="lowerButton" onclick="addNoteButtonClick(this);">
+							</button>
+
+						</div>
+					</div>
+				</div>	
+				<div class="timeLineWrapper">
+					<div class="curlBlue">
+					</div>
+					<div class="timeLineBgPink">
+					</div>
+					<div class="timeLineCursor">
+					</div>
+					<div class="timeLineBg">
+					</div>
+				</div>
+				<div class="blueWhiteWrapper">
+					<div id="whiteWrapper" class="whiteWrapper">
+					</div>
+					<div class="grayWrapper" id="grayWrapper">
+					</div>
+				</div>
+			</div>
+	   </div>
+
+  </section>
+
+</body>
+</html>
